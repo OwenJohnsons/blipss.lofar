@@ -9,7 +9,10 @@ import matplotlib.gridspec as gridspec
 # Use non-interactive backend for plotting.
 mpl.use('Agg')
 # Enable use of LaTeX labels in plots.
-plt.rcParams.update({"text.usetex": True, "text.latex.preamble": r"\usepackage{amsmath}"})
+# plt.rcParams.update({"text.usetex": True, "text.latex.preamble": r"\usepackage{amsmath}"})
+plt.rc('font', family = 'serif', serif = 'cmr10') 
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['mathtext.fontset'] = 'stix'
 ##########################################################################
 # Scatter plot of periodicity candidates in the radio frequency vs. period diagram
 def scatterplot_period_radiofreq(cand_periods, cand_freqs, cand_snrs, cand_flags, basename, min_period, max_period, min_freq, max_freq, plot_formats=['.png']):
